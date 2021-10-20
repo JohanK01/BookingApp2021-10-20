@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/login.css">
+    <script src = "../js/login.js" ></script>
+    <title>Login</title>
+</head>
+<body>
+    <div class="header"> <!--Might want to put more things inside this, text for now-->
+        <div class="WashnGoLogo">
+            <!---->><h1>Please login</h1> <!--Temporarily in the h1 tag-->
+        </div>
+    </div>
+
+    <div class="container"> <!--Everything inside the form-->
+        <form class="form">
+            <div class="formItem"> 
+                <label>E-mail</label>
+                <input type="text" class="input" id="email" placeholder="Example@hotmail.com">
+            </div>
+            
+            <div class="formItem">
+                <label>Password</label>
+                <input type="password" class="input" id="pas" placeholder="Type your password">
+            </div>
+            <button type="button" class="btn" onclick="Loginfunction()">Log in</button> 
+                    <!--Calls for the function in linked js file-->
+        </form>
+        
+    </div>
+</body>
+</html>
