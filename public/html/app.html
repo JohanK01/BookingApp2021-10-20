@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,20 +10,53 @@
     <script src="../js/app.js"></script>
     <link rel="stylesheet" href="css/app.css">
 </head>
+
 <body>
-    <div class ="frame">
-        <div class ="myBoking">Måndag</div>
-        
+    <div class="frame">
+        <div class="myBoking">Måndag</div>
+
         <form action="" method="POST">
-           
+
             <div>
                 <label for="request">Time</label>
-                <input type="text" id ="name" name="name">
-            </div>  
-        <button id ="mybtn"  type ="submit" onclick="myBookFunction()">Boka</button>
+                <input type="text" id="name" name="name">
+            </div>
+            <button id="mybtn" type="submit" onclick="myBookFunction()">Boka</button>
         </form>
-       
+
     </div>
     <div id="anka"></div>
+    <script>
+        'use strict';
+        let xhttp = new XMLHttpRequest;
+        xhttp.open('GET', '../data/user.json');
+        xhttp.responseType = 'json';
+        xhttp.send();
+
+        xhttp.onload = () => {
+                const data = xhttp.response;
+                console.log(data);
+                
+                const form1 = document.createElement('form');
+                const tbox1 = document.createElement('input');
+                const btnUpdate = document.createElement('button');
+                
+                btnUpdate.id = 'btnUpdateId';
+                btnUpdate.textContent = 'Update';
+                tbox1.id = 'timeId';
+                tbox1.name = 'timeName';
+                form1.id = 'formId';
+                form1.action = '/booking';
+                form1.method = 'POST';
+
+                tbox1.value = data.time;
+                
+                document.getElementById('anka').appendChild(form1);
+                document.getElementById('formId').appendChild(tbox1);
+                document.getElementById('formId').appendChild(btnUpdate);
+
+        };
+    </script>
 </body>
+
 </html>

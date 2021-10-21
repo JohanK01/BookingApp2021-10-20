@@ -15,3 +15,17 @@ exports.myBookings = (req, res) => {
 
 };
 
+exports.appUpdate = (req, res) => {
+    const fs = require('fs');
+
+    const time = req.body.timeName;
+    const tempText = {time};
+    const newJsonText = JSON.stringify(tempText);
+
+    fs.writeFile('./public/data/user.json', newJsonText, function(err) {
+        if (err) throw err;
+        console.log('bra jobbat');
+    });
+    res.sendfile('./public/html/app.html')
+};
+
