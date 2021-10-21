@@ -24,7 +24,7 @@ xhttp.onload = () => {
 
         tbox1.value = data.time;
         
-        document.getElementById('anka').appendChild(form1);
+        document.getElementById('strukture').appendChild(form1);
         document.getElementById('formId').appendChild(tbox1);
         document.getElementById('formId').appendChild(btnBoka);
 };
