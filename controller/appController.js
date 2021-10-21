@@ -22,7 +22,7 @@ exports.appUpdate = (req, res) => {
     const tempText = {time};
     const newJsonText = JSON.stringify(tempText);
 
-    fs.writeFile('./public/data/user.json', newJsonText, function(err) {
+    fs.writeFile('./public/data/time.json', newJsonText, function(err) {
         if (err) throw err;
         console.log('bra jobbat');
     });

@@ -1,20 +1,34 @@
-// 'use strict';
-// let xhttp = new XMLHttpRequest;
-// xhttp.open('GET', '../data/user.json');
-// xhttp.responseType = 'json';
-// xhttp.send();
+'use strict';
+let xhttp = new XMLHttpRequest;
+xhttp.open('GET', '../data/time.json');
+xhttp.responseType = 'json';
+xhttp.send();
 
-// xhttp.onload = () => {
-//     const data = xhttp.response;
-//     console.log(data);
-   
-    
-//     let div1 = document.createElement('p');
-    
+xhttp.onload = () => {
+        const data = xhttp.response;
+        console.log(data);
+        
+        const form1 = document.createElement('form');
+        const tbox1 = document.createElement('input');
+        const btnBoka = document.createElement('button');
+        
+        btnBoka.id = 'btnBokaId';
+        btnBoka.textContent = 'Boka';
+        btnBoka.addEventListener('click', myBoka);
+        
+        tbox1.id = 'timeId';
+        tbox1.name = 'timeName';
+        form1.id = 'formId';
+        form1.action = '/booking';
+        form1.method = 'POST';
 
-   
-// };
-// function myBookFunction() {
-//     document.getElementById('mybtn').innerHTML = "Bokat!";
+        tbox1.value = data.time;
+        
+        document.getElementById('anka').appendChild(form1);
+        document.getElementById('formId').appendChild(tbox1);
+        document.getElementById('formId').appendChild(btnBoka);
+};
 
-// };
+function myBoka() {
+   alert('Bokat!')
+}
